@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cedy13vngnaeb"]
+
+[ext_resource type="Texture2D" uid="uid://cql20ccgagh1b" path="res://assets/Books_1.png" id="1_331qn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c375d"]
+radius = 38.118237
+
+[node name="Item" type="Node2D" unique_id=669640821]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=604359290]
+position = Vector2(0, -13)
+texture = ExtResource("1_331qn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=582859645]
+position = Vector2(0, -10)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2005340932]
+shape = SubResource("CircleShape2D_c375d")
+debug_color = Color(0.72048813, 0.7110704, 0, 0.41960785)
