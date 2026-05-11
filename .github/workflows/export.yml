@@ -1,0 +1,50 @@
+name: "Build and Export Game"
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+
+jobs:
+  build:
+    name: Build for web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Create Git LFS file list
+        run: git lfs ls-files -l |cut -d' ' -f1 |sort >.git/lfs-hashes.txt
+
+      - name: Restore Git LFS object cache
+        uses: actions/cache@v5
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfsdata-v1-${{ hashFiles('.git/lfs-hashes.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-lfsdata-v1-
+            ${{ runner.os }}-lfsdata
+
+      - name: Fetch any needed Git LFS objects and prune extraneous ones
+        run: git lfs fetch --prune
+
+      - name: Check out Git LFS content
+        run: git lfs checkout
+
+      - name: Export web build
+        uses: endlessm/godot-export-action@v1
+        with:
+          godot_version: "4.6.2"
+
+      - name: Upload web artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: web
+          path: build/web
