@@ -238,36 +238,6 @@ item_detector = NodePath("../ItemDetector")
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_wtcfe")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1846841601]
-position_smoothing_enabled = true
-
-[node name="FloorRays" type="Node2D" parent="." unique_id=1560150190]
-unique_name_in_owner = true
-
-[node name="RayCast2D" type="RayCast2D" parent="FloorRays" unique_id=974671687]
-position = Vector2(0, 10)
-target_position = Vector2(0, 16)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="RayCast2D2" type="RayCast2D" parent="FloorRays" unique_id=540206718]
-position = Vector2(23, 0)
-target_position = Vector2(16, 0)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="RayCast2D3" type="RayCast2D" parent="FloorRays" unique_id=460471586]
-position = Vector2(0, -10)
-target_position = Vector2(0, -16)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="RayCast2D4" type="RayCast2D" parent="FloorRays" unique_id=732382389]
-position = Vector2(-23, 0)
-target_position = Vector2(-16, 0)
-collision_mask = 16
-hit_from_inside = true
-
 [node name="JumpIndicator" type="PointLight2D" parent="." unique_id=266891247 node_paths=PackedStringArray("character")]
 position = Vector2(64, 80)
 range_item_cull_mask = 128
@@ -275,16 +245,23 @@ texture = ExtResource("7_0lm1f")
 script = ExtResource("8_couud")
 character = NodePath("..")
 
+[node name="FloorRay" type="RayCast2D" parent="." unique_id=109562648]
+unique_name_in_owner = true
+target_position = Vector2(0, 16)
+collision_mask = 32
+hit_from_inside = true
+
 [node name="AboveRay" type="RayCast2D" parent="." unique_id=919618942]
 unique_name_in_owner = true
 position = Vector2(64, -64)
 target_position = Vector2(0, -16)
-collision_mask = 16
+collision_mask = 32
 hit_from_inside = true
 
 [node name="BelowRay" type="RayCast2D" parent="." unique_id=1022668241]
 unique_name_in_owner = true
 position = Vector2(64, 64)
+enabled = false
 target_position = Vector2(0, 16)
 collision_mask = 16
 hit_from_inside = true

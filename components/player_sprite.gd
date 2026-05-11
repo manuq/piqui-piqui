@@ -21,8 +21,8 @@ func on_item_collected() -> void:
 	play("attack")
 
 func flip() -> void:
-	if not is_zero_approx(character.velocity.x):
-		flip_h = character.velocity.x < 0
+	if not is_zero_approx(character.facing_direction.x):
+		flip_h = character.facing_direction.x < 0
 
 func _process(_delta: float) -> void:
 	if not character:

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ccm6k5v6dtmfk" path="res://components/player.tscn" id="2_0e48y"]
 [ext_resource type="TileSet" uid="uid://5qfcbohv0b2c" path="res://tilesets/floor_1_tileset.tres" id="2_0hol4"]
 [ext_resource type="TileSet" uid="uid://i48gpd6nl0ap" path="res://tilesets/floor_2_tileset.tres" id="3_d21ai"]
-[ext_resource type="Script" uid="uid://b7px5s6mcprr0" path="res://components/walk.gd" id="5_q6r6c"]
+[ext_resource type="Script" uid="uid://b7px5s6mcprr0" path="res://components/piqui_walk.gd" id="5_q6r6c"]
 [ext_resource type="Script" uid="uid://2ey34ropj4mr" path="res://components/jump.gd" id="6_ir8iy"]
 [ext_resource type="Texture2D" uid="uid://djulxu3mc1nj3" path="res://assets/Bush_Green_Large.png" id="6_kdubu"]
 [ext_resource type="Texture2D" uid="uid://bql7wspdb5xq6" path="res://assets/Bush_Green_Small.png" id="7_d21ai"]
@@ -137,19 +137,22 @@ animations = [{
 y_sort_enabled = true
 
 [node name="Tiles" type="Node2D" parent="." unique_id=736836785]
+y_sort_enabled = true
 
 [node name="TilesLevel0" type="TileMapLayer" parent="Tiles" unique_id=305334697]
 light_mask = 32
 visibility_layer = 32
-tile_map_data = PackedByteArray("AAAIAAYAAQAAAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAALAAYAAQABAAEAAAAMAAYAAQABAAEAAAAMAAcAAQABAAEAAAALAAcAAQABAAEAAAAKAAcAAQABAAEAAAAJAAcAAQABAAEAAAAIAAcAAQAAAAEAAAAIAAgAAQABAAEAAAAJAAgAAQABAAEAAAAKAAgAAQABAAEAAAALAAgAAQABAAEAAAAMAAgAAQABAAEAAAAIAAkAAQABAAEAAAAMAAkAAQABAAEAAAANAAYAAQACAAEAAAANAAcAAQACAAEAAAANAAgAAQACAAEAAAANAAkAAQACAAEAAAAIAAoAAQADAAEAAAAMAAoAAQAAAAEAAAANAAoAAQACAAEAAAALAAUAAQAAAAAAAAAMAAUAAQABAAAAAAANAAUAAQACAAAAAAAIAAsAAQADAAEAAAAIAAwAAQABAAEAAAAJAAwAAQABAAAAAAAKAAwAAQABAAAAAAAMAAsAAQAAAAEAAAANAAsAAQACAAEAAAAIAA0AAQAAAAEAAAAJAA0AAQABAAEAAAAKAA0AAQABAAEAAAALAAwAAQABAAAAAAAMAAwAAQABAAEAAAANAAwAAQACAAEAAAAIAA4AAQAAAAEAAAAJAA4AAQABAAEAAAAKAA4AAQABAAEAAAALAA0AAQABAAEAAAAMAA0AAQABAAEAAAANAA0AAQACAAEAAAADAAkAAQAAAAEAAAADAAgAAQAAAAAAAAADAAsAAQADAAEAAAADAAoAAQADAAEAAAAEAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAHAAgAAQABAAAAAAAIAA8AAQAAAAIAAAAJAA8AAQABAAIAAAAKAA8AAQACAAIAAAALAA4AAQABAAIAAAAMAA4AAQABAAIAAAANAA4AAQACAAIAAAAHAAwAAQABAAMAAAAGAAwAAQABAAMAAAAFAAwAAQABAAMAAAAEAAwAAQABAAMAAAADAAwAAQAAAAIAAAAEAAkAAQABAAIAAAAFAAkAAQABAAIAAAAGAAkAAQABAAIAAAAHAAkAAQABAAIAAAAJAAkAAQABAAIAAAAKAAkAAQABAAIAAAALAAkAAQABAAIAAAA=")
+tile_map_data = PackedByteArray("AAAIAAYAAQAAAAAAAAAJAAYAAQABAAMAAAAKAAYAAQABAAMAAAALAAYAAQACAAIAAAAIAAcAAQADAAEAAAAIAAgAAQABAAEAAAAJAAgAAQABAAAAAAAKAAgAAQABAAAAAAALAAgAAQABAAAAAAAMAAgAAQABAAAAAAAIAAkAAQABAAEAAAAMAAkAAQABAAEAAAANAAYAAQADAAEAAAANAAcAAQADAAEAAAANAAgAAQACAAEAAAANAAkAAQACAAEAAAAIAAoAAQADAAEAAAAMAAoAAQAAAAEAAAANAAoAAQACAAEAAAALAAUAAQAAAAAAAAAMAAUAAQABAAMAAAANAAUAAQACAAAAAAAIAAsAAQADAAEAAAAIAAwAAQABAAEAAAAJAAwAAQABAAAAAAAKAAwAAQABAAAAAAAMAAsAAQAAAAEAAAANAAsAAQACAAEAAAAIAA0AAQAAAAEAAAAJAA0AAQABAAEAAAAKAA0AAQABAAEAAAALAAwAAQABAAAAAAAMAAwAAQABAAEAAAANAAwAAQACAAEAAAAIAA4AAQAAAAEAAAAJAA4AAQABAAEAAAAKAA4AAQABAAEAAAALAA0AAQABAAEAAAAMAA0AAQABAAEAAAANAA0AAQACAAEAAAADAAkAAQAAAAEAAAADAAgAAQAAAAAAAAADAAsAAQADAAEAAAADAAoAAQADAAEAAAAEAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAHAAgAAQABAAAAAAAIAA8AAQAAAAIAAAAJAA8AAQABAAIAAAAKAA8AAQACAAIAAAALAA4AAQABAAIAAAAMAA4AAQABAAIAAAANAA4AAQACAAIAAAAHAAwAAQABAAMAAAAGAAwAAQABAAMAAAAFAAwAAQABAAMAAAAEAAwAAQABAAMAAAADAAwAAQAAAAIAAAAEAAkAAQABAAIAAAAFAAkAAQABAAIAAAAGAAkAAQABAAIAAAAHAAkAAQABAAIAAAAJAAkAAQABAAIAAAAKAAkAAQABAAIAAAALAAkAAQABAAIAAAA=")
 tile_set = ExtResource("1_epypp")
+collision_visibility_mode = 2
 
 [node name="TilesLevel1" type="TileMapLayer" parent="Tiles" unique_id=2053487249]
 light_mask = 64
 visibility_layer = 64
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAAPAAcAAAACAAEAAAAPAAgAAAACAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAIAAAAQAAoAAAABAAEAAAARAAoAAAABAAAAAAASAAoAAAACAAAAAAASAAsAAAACAAIAAAARAAsAAAABAAIAAAAQAAsAAAAAAAIAAAAKAAQAAAACAAIAAAAJAAQAAAABAAQAAAAIAAQAAAABAAQAAAAKAAMAAAAAAAEAAAALAAMAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAIAAAAOAAMAAAACAAEAAAAOAAQAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAYAAAACAAEAAAAPAAUAAAACAAEAAAAPAAQAAAABAAAAAAAOAAIAAAACAAEAAAANAAIAAAABAAEAAAAMAAIAAAABAAEAAAALAAIAAAABAAEAAAAKAAIAAAAAAAEAAAAHAAQAAAAAAAAAAAAHAAUAAAADAAEAAAAHAAYAAAACAAIAAAAGAAYAAAABAAQAAAAFAAYAAAABAAQAAAAEAAYAAAABAAQAAAADAAYAAAABAAQAAAACAAYAAAAAAAAAAAACAAcAAAADAAEAAAACAAgAAAADAAEAAAACAAkAAAADAAIAAAALAAkAAAACAAAAAAAKAAkAAAABAAAAAAAOAAkAAAAAAAEAAAAKAAEAAAAAAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAAOAAEAAAACAAAAAAAKAAoAAAABAAIAAAALAAoAAAACAAIAAAAMAA4AAAADAAQAAAAOAAoAAAAAAAIAAAAQAAkAAAACAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAEAAAANAAAAAAACAAEAAAAQAAQAAAABAAQAAAARAAQAAAABAAQAAAASAAQAAAABAAQAAAATAAQAAAABAAQAAAAOAP//AAABAAIAAAAPAP//AAABAAIAAAAQAP//AAABAAIAAAARAP//AAABAAIAAAASAP//AAABAAIAAAATAP//AAABAAIAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP7/AAABAAAAAAARAP7/AAABAAAAAAASAP7/AAABAAAAAAATAP7/AAABAAAAAAAUAP//AAABAAIAAAAUAP7/AAACAAAAAAAVAP//AAACAAAAAAAVAAAAAAADAAEAAAAVAAEAAAADAAEAAAAVAAIAAAADAAEAAAAVAAMAAAADAAEAAAAUAAQAAAABAAQAAAAVAAQAAAACAAIAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAIAAAANAP//AAABAAEAAAANAP7/AAABAAAAAAAMAP//AAAAAAEAAAAMAP7/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAAPAAcAAAACAAEAAAAPAAgAAAACAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAIAAAAQAAoAAAABAAEAAAARAAoAAAABAAAAAAASAAoAAAACAAAAAAASAAsAAAACAAIAAAARAAsAAAABAAIAAAAQAAsAAAAAAAIAAAAKAAQAAAACAAIAAAAJAAQAAAABAAQAAAAIAAQAAAABAAQAAAAKAAMAAAAAAAEAAAALAAMAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAQAAAAOAAMAAAACAAAAAAAOAAQAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAYAAAACAAEAAAAPAAUAAAACAAEAAAAPAAQAAAABAAAAAAAMAAIAAAACAAEAAAALAAIAAAABAAEAAAAKAAIAAAAAAAEAAAAHAAQAAAAAAAAAAAAHAAUAAAADAAEAAAAHAAYAAAACAAIAAAAGAAYAAAABAAQAAAAFAAYAAAABAAQAAAAEAAYAAAABAAQAAAADAAYAAAABAAQAAAACAAYAAAAAAAAAAAACAAcAAAADAAEAAAACAAgAAAADAAEAAAACAAkAAAADAAIAAAALAAkAAAACAAAAAAAKAAkAAAABAAAAAAAOAAkAAAAAAAEAAAAKAAEAAAAAAAEAAAAKAAoAAAABAAIAAAALAAoAAAACAAIAAAAMAA4AAAADAAQAAAAOAAoAAAAAAAIAAAAQAAkAAAACAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAACAAEAAAAQAAQAAAABAAQAAAARAAQAAAABAAQAAAASAAQAAAABAAQAAAATAAQAAAABAAQAAAAOAP//AAABAAIAAAAPAP//AAABAAIAAAAQAP//AAABAAIAAAARAP//AAABAAIAAAASAP//AAABAAIAAAATAP//AAABAAIAAAAUAP//AAABAAIAAAAVAP//AAACAAEAAAAVAAAAAAADAAEAAAAVAAEAAAADAAEAAAAVAAIAAAADAAEAAAAVAAMAAAADAAEAAAAUAAQAAAABAAQAAAAVAAQAAAACAAIAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAIAAAANAP//AAABAAIAAAAMAP//AAAAAAEAAAAMAAEAAAACAAEAAAALAAEAAAABAAEAAAAMAP7/AAAAAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP7/AAABAAAAAAARAP7/AAABAAAAAAASAP7/AAABAAAAAAATAP7/AAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAACAAAAAAA=")
 tile_set = ExtResource("2_0hol4")
+collision_visibility_mode = 2
 
 [node name="TilesLevel1Bridges" type="TileMapLayer" parent="Tiles" unique_id=422364789]
 light_mask = 64
@@ -158,14 +161,17 @@ z_index = 10
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAALAAkAAQAAAAAAAAAMAAkAAQABAAAAAAANAAkAAQABAAAAAAAOAAkAAQACAAAAAAAMAAoAAQACAAMAAAANAAoAAQACAAMAAAA=")
 tile_set = ExtResource("2_0hol4")
+collision_visibility_mode = 2
 
 [node name="TilesLevel2" type="TileMapLayer" parent="Tiles" unique_id=651106990]
 light_mask = 128
 visibility_layer = 128
 z_index = 10
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAGAAQAAQACAAIAAAAFAAQAAQABAAIAAAAEAAQAAQAAAAIAAAAEAAMAAQAAAAEAAAAFAAMAAQABAAEAAAAGAAMAAQACAAEAAAAFAAIAAQABAAEAAAAEAAIAAQAAAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAIAAAAIAAIAAQABAAIAAAAJAAIAAQACAAIAAAAJAAEAAQACAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAPAAIAAQAAAAIAAAAPAAEAAQAAAAEAAAAQAAEAAQABAAEAAAAQAAIAAQABAAIAAAAFAAAAAQAAAAAAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQABAAEAAAAJAAAAAQACAAEAAAAPAAAAAQAAAAEAAAAQAAAAAQABAAEAAAAEAAEAAQAAAAAAAAARAAgAAQAAAAIAAAASAAgAAQACAAIAAAASAAcAAQACAAAAAAARAAcAAQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQACAAAAAAAPAP//AQABAAAAAAAQAP//AQACAAAAAAARAAIAAQABAAIAAAASAAIAAQABAAIAAAASAAEAAQACAAAAAAARAAEAAQABAAEAAAARAAAAAQACAAAAAAATAAIAAQACAAQAAAAOAP//AQAAAAQAAAA=")
+position = Vector2(-2, 0)
+tile_map_data = PackedByteArray("AAAGAAQAAQACAAIAAAAFAAQAAQABAAQAAAAEAAQAAQAAAAIAAAAEAAMAAQADAAEAAAAGAAMAAQADAAEAAAAFAAIAAQABAAIAAAAEAAIAAQAAAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAIAAAAIAAIAAQABAAIAAAAJAAIAAQACAAIAAAAJAAEAAQACAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAPAAIAAQAAAAIAAAAPAAEAAQAAAAEAAAAQAAEAAQABAAEAAAAQAAIAAQABAAIAAAAFAAAAAQAAAAAAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQABAAEAAAAJAAAAAQACAAEAAAAPAAAAAQAAAAEAAAAQAAAAAQABAAEAAAAEAAEAAQAAAAAAAAARAAgAAQAAAAIAAAASAAgAAQACAAIAAAASAAcAAQACAAAAAAARAAcAAQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQACAAAAAAAPAP//AQABAAAAAAAQAP//AQACAAAAAAARAAIAAQABAAIAAAASAAIAAQABAAIAAAASAAEAAQACAAAAAAARAAEAAQABAAEAAAARAAAAAQACAAAAAAATAAIAAQACAAQAAAAOAP//AQAAAAQAAAA=")
 tile_set = ExtResource("3_d21ai")
+collision_visibility_mode = 2
 
 [node name="TilesLevel2Bridges" type="TileMapLayer" parent="Tiles" unique_id=93665718]
 light_mask = 128
@@ -174,6 +180,7 @@ z_index = 20
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAJAAEAAAAAAAAAAAAKAAEAAAABAAAAAAALAAEAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAABAAAAAAAOAAEAAAABAAAAAAAPAAEAAAACAAAAAAASAAIAAAAAAAEAAAASAAMAAAAAAAIAAAASAAQAAAAAAAIAAAASAAUAAAAAAAIAAAASAAYAAAAAAAIAAAASAAcAAAAAAAMAAAAKAAIAAAACAAMAAAALAAIAAAACAAMAAAAMAAIAAAACAAMAAAANAAIAAAACAAMAAAAOAAIAAAACAAMAAAA=")
 tile_set = ExtResource("3_d21ai")
+collision_visibility_mode = 2
 
 [node name="Things" type="Node2D" parent="." unique_id=1381767985]
 y_sort_enabled = true
@@ -183,11 +190,18 @@ z_index = 10
 position = Vector2(800, 223)
 current_floor = 1
 
-[node name="Walk" type="Node" parent="Things/Player" unique_id=1131318956]
-script = ExtResource("5_q6r6c")
-
-[node name="Jump" type="Node" parent="Things/Player" unique_id=691507986]
+[node name="Jump" type="Node2D" parent="Things/Player" unique_id=267011960 node_paths=PackedStringArray("character")]
 script = ExtResource("6_ir8iy")
+character = NodePath("..")
+
+[node name="PiquiWalk" type="Node2D" parent="Things/Player" unique_id=713099306 node_paths=PackedStringArray("character")]
+script = ExtResource("5_q6r6c")
+character = NodePath("..")
+speed = 800.0
+metadata/_custom_type_script = "uid://b7px5s6mcprr0"
+
+[node name="Camera2D" type="Camera2D" parent="Things/Player" unique_id=2055498534]
+position_smoothing_enabled = true
 
 [node name="PropsLevel0" type="Node2D" parent="Things" unique_id=1332390302]
 y_sort_enabled = true
@@ -197,37 +211,112 @@ y_sort_enabled = true
 position = Vector2(-10, -47)
 
 [node name="Item" parent="Things/PropsLevel0/Items" unique_id=669640821 instance=ExtResource("8_rj586")]
-position = Vector2(541, 442)
+position = Vector2(554, 463)
 
 [node name="Item2" parent="Things/PropsLevel0/Items" unique_id=1036986227 instance=ExtResource("8_rj586")]
-position = Vector2(307, 842)
+position = Vector2(298, 847)
 
 [node name="Item3" parent="Things/PropsLevel0/Items" unique_id=130160240 instance=ExtResource("8_rj586")]
-position = Vector2(452, 857)
+position = Vector2(362, 847)
+
+[node name="Item12" parent="Things/PropsLevel0/Items" unique_id=170065766 instance=ExtResource("8_rj586")]
+position = Vector2(426, 847)
+
+[node name="Item13" parent="Things/PropsLevel0/Items" unique_id=762750686 instance=ExtResource("8_rj586")]
+position = Vector2(490, 847)
+
+[node name="Item14" parent="Things/PropsLevel0/Items" unique_id=2131154257 instance=ExtResource("8_rj586")]
+position = Vector2(234, 847)
+
+[node name="Item15" parent="Things/PropsLevel0/Items" unique_id=593341783 instance=ExtResource("8_rj586")]
+position = Vector2(234, 783)
+
+[node name="Item16" parent="Things/PropsLevel0/Items" unique_id=2016212738 instance=ExtResource("8_rj586")]
+position = Vector2(234, 719)
+
+[node name="Item17" parent="Things/PropsLevel0/Items" unique_id=892493955 instance=ExtResource("8_rj586")]
+position = Vector2(234, 655)
+
+[node name="Item18" parent="Things/PropsLevel0/Items" unique_id=2113022329 instance=ExtResource("8_rj586")]
+position = Vector2(298, 655)
+
+[node name="Item19" parent="Things/PropsLevel0/Items" unique_id=1881767982 instance=ExtResource("8_rj586")]
+position = Vector2(362, 655)
 
 [node name="Item4" parent="Things/PropsLevel0/Items" unique_id=1156953128 instance=ExtResource("8_rj586")]
-position = Vector2(677, 1045)
+position = Vector2(682, 1039)
+
+[node name="Item20" parent="Things/PropsLevel0/Items" unique_id=383446511 instance=ExtResource("8_rj586")]
+position = Vector2(618, 1039)
+
+[node name="Item21" parent="Things/PropsLevel0/Items" unique_id=906962990 instance=ExtResource("8_rj586")]
+position = Vector2(554, 1039)
 
 [node name="Item5" parent="Things/PropsLevel0/Items" unique_id=1029049140 instance=ExtResource("8_rj586")]
-position = Vector2(820, 478)
+position = Vector2(874, 399)
+
+[node name="Item22" parent="Things/PropsLevel0/Items" unique_id=359028208 instance=ExtResource("8_rj586")]
+position = Vector2(810, 399)
+
+[node name="Item23" parent="Things/PropsLevel0/Items" unique_id=1510382323 instance=ExtResource("8_rj586")]
+position = Vector2(746, 399)
 
 [node name="Item6" parent="Things/PropsLevel0/Items" unique_id=1910284958 instance=ExtResource("8_rj586")]
-position = Vector2(388, 584)
+position = Vector2(234, 591)
+
+[node name="Item24" parent="Things/PropsLevel0/Items" unique_id=90845563 instance=ExtResource("8_rj586")]
+position = Vector2(298, 591)
+
+[node name="Item25" parent="Things/PropsLevel0/Items" unique_id=237522770 instance=ExtResource("8_rj586")]
+position = Vector2(362, 591)
 
 [node name="Item7" parent="Things/PropsLevel0/Items" unique_id=52548370 instance=ExtResource("8_rj586")]
-position = Vector2(558, 746)
+position = Vector2(554, 527)
+
+[node name="Item26" parent="Things/PropsLevel0/Items" unique_id=1338121318 instance=ExtResource("8_rj586")]
+position = Vector2(618, 463)
+
+[node name="Item27" parent="Things/PropsLevel0/Items" unique_id=1509356535 instance=ExtResource("8_rj586")]
+position = Vector2(682, 463)
+
+[node name="Item28" parent="Things/PropsLevel0/Items" unique_id=1075756084 instance=ExtResource("8_rj586")]
+position = Vector2(746, 463)
+
+[node name="Item29" parent="Things/PropsLevel0/Items" unique_id=688871307 instance=ExtResource("8_rj586")]
+position = Vector2(874, 463)
 
 [node name="Item8" parent="Things/PropsLevel0/Items" unique_id=1689208121 instance=ExtResource("8_rj586")]
-position = Vector2(868, 699)
+position = Vector2(874, 911)
 
 [node name="Item9" parent="Things/PropsLevel0/Items" unique_id=1583464093 instance=ExtResource("8_rj586")]
-position = Vector2(861, 568)
+position = Vector2(874, 527)
+
+[node name="Item30" parent="Things/PropsLevel0/Items" unique_id=752366584 instance=ExtResource("8_rj586")]
+position = Vector2(874, 591)
+
+[node name="Item33" parent="Things/PropsLevel0/Items" unique_id=1375788381 instance=ExtResource("8_rj586")]
+position = Vector2(874, 655)
+
+[node name="Item34" parent="Things/PropsLevel0/Items" unique_id=732949913 instance=ExtResource("8_rj586")]
+position = Vector2(874, 719)
+
+[node name="Item35" parent="Things/PropsLevel0/Items" unique_id=1234460350 instance=ExtResource("8_rj586")]
+position = Vector2(874, 783)
+
+[node name="Item36" parent="Things/PropsLevel0/Items" unique_id=2106929070 instance=ExtResource("8_rj586")]
+position = Vector2(874, 847)
 
 [node name="Item10" parent="Things/PropsLevel0/Items" unique_id=1811408063 instance=ExtResource("8_rj586")]
-position = Vector2(772, 997)
+position = Vector2(746, 975)
+
+[node name="Item31" parent="Things/PropsLevel0/Items" unique_id=1727683844 instance=ExtResource("8_rj586")]
+position = Vector2(810, 975)
+
+[node name="Item32" parent="Things/PropsLevel0/Items" unique_id=1439453529 instance=ExtResource("8_rj586")]
+position = Vector2(874, 975)
 
 [node name="Item11" parent="Things/PropsLevel0/Items" unique_id=1256650151 instance=ExtResource("8_rj586")]
-position = Vector2(878, 938)
+position = Vector2(682, 975)
 
 [node name="Decoration" type="Node2D" parent="Things/PropsLevel0" unique_id=294053800]
 y_sort_enabled = true
@@ -253,37 +342,148 @@ y_sort_enabled = true
 position = Vector2(52, 14)
 
 [node name="Item" parent="Things/PropsLevel1/Items" unique_id=1624289820 instance=ExtResource("8_rj586")]
-position = Vector2(1085, 275)
+position = Vector2(1004, 274)
+
+[node name="Item12" parent="Things/PropsLevel1/Items" unique_id=1623111852 instance=ExtResource("8_rj586")]
+position = Vector2(1068, 274)
+
+[node name="Item13" parent="Things/PropsLevel1/Items" unique_id=1771734749 instance=ExtResource("8_rj586")]
+position = Vector2(1132, 274)
+
+[node name="Item14" parent="Things/PropsLevel1/Items" unique_id=1712701315 instance=ExtResource("8_rj586")]
+position = Vector2(1196, 274)
+
+[node name="Item15" parent="Things/PropsLevel1/Items" unique_id=1506931914 instance=ExtResource("8_rj586")]
+position = Vector2(1260, 274)
+
+[node name="Item16" parent="Things/PropsLevel1/Items" unique_id=2011506344 instance=ExtResource("8_rj586")]
+position = Vector2(1324, 274)
 
 [node name="Item2" parent="Things/PropsLevel1/Items" unique_id=728981659 instance=ExtResource("8_rj586")]
-position = Vector2(874, 186)
+position = Vector2(876, 210)
+
+[node name="Item17" parent="Things/PropsLevel1/Items" unique_id=653726102 instance=ExtResource("8_rj586")]
+position = Vector2(876, 274)
+
+[node name="Item18" parent="Things/PropsLevel1/Items" unique_id=870377064 instance=ExtResource("8_rj586")]
+position = Vector2(876, 338)
+
+[node name="Item19" parent="Things/PropsLevel1/Items" unique_id=659827743 instance=ExtResource("8_rj586")]
+position = Vector2(876, 402)
+
+[node name="Item20" parent="Things/PropsLevel1/Items" unique_id=1079407410 instance=ExtResource("8_rj586")]
+position = Vector2(876, 466)
+
+[node name="Item21" parent="Things/PropsLevel1/Items" unique_id=1043847228 instance=ExtResource("8_rj586")]
+position = Vector2(876, 530)
+
+[node name="Item22" parent="Things/PropsLevel1/Items" unique_id=540236811 instance=ExtResource("8_rj586")]
+position = Vector2(940, 274)
+
+[node name="Item23" parent="Things/PropsLevel1/Items" unique_id=25607974 instance=ExtResource("8_rj586")]
+position = Vector2(940, 338)
+
+[node name="Item24" parent="Things/PropsLevel1/Items" unique_id=1668085450 instance=ExtResource("8_rj586")]
+position = Vector2(940, 402)
+
+[node name="Item25" parent="Things/PropsLevel1/Items" unique_id=372817364 instance=ExtResource("8_rj586")]
+position = Vector2(940, 466)
+
+[node name="Item26" parent="Things/PropsLevel1/Items" unique_id=664523541 instance=ExtResource("8_rj586")]
+position = Vector2(940, 530)
 
 [node name="Item3" parent="Things/PropsLevel1/Items" unique_id=8555402 instance=ExtResource("8_rj586")]
-position = Vector2(423, 404)
+position = Vector2(428, 402)
+
+[node name="Item27" parent="Things/PropsLevel1/Items" unique_id=1817234109 instance=ExtResource("8_rj586")]
+position = Vector2(364, 402)
+
+[node name="Item28" parent="Things/PropsLevel1/Items" unique_id=852020518 instance=ExtResource("8_rj586")]
+position = Vector2(300, 402)
+
+[node name="Item29" parent="Things/PropsLevel1/Items" unique_id=138538079 instance=ExtResource("8_rj586")]
+position = Vector2(236, 402)
+
+[node name="Item30" parent="Things/PropsLevel1/Items" unique_id=460067835 instance=ExtResource("8_rj586")]
+position = Vector2(172, 402)
+
+[node name="Item31" parent="Things/PropsLevel1/Items" unique_id=2097507776 instance=ExtResource("8_rj586")]
+position = Vector2(108, 402)
+
+[node name="Item32" parent="Things/PropsLevel1/Items" unique_id=389069415 instance=ExtResource("8_rj586")]
+position = Vector2(108, 466)
+
+[node name="Item33" parent="Things/PropsLevel1/Items" unique_id=580359328 instance=ExtResource("8_rj586")]
+position = Vector2(108, 530)
 
 [node name="Item4" parent="Things/PropsLevel1/Items" unique_id=696225929 instance=ExtResource("8_rj586")]
-position = Vector2(108, 603)
+position = Vector2(108, 594)
 
 [node name="Item5" parent="Things/PropsLevel1/Items" unique_id=826325026 instance=ExtResource("8_rj586")]
-position = Vector2(588, 599)
+position = Vector2(556, 594)
+
+[node name="Item34" parent="Things/PropsLevel1/Items" unique_id=530996041 instance=ExtResource("8_rj586")]
+position = Vector2(620, 594)
+
+[node name="Item35" parent="Things/PropsLevel1/Items" unique_id=596182237 instance=ExtResource("8_rj586")]
+position = Vector2(556, 658)
+
+[node name="Item36" parent="Things/PropsLevel1/Items" unique_id=1680503103 instance=ExtResource("8_rj586")]
+position = Vector2(620, 658)
 
 [node name="Item6" parent="Things/PropsLevel1/Items" unique_id=1153426438 instance=ExtResource("8_rj586")]
-position = Vector2(1134, 731)
+position = Vector2(1132, 722)
+
+[node name="Item37" parent="Things/PropsLevel1/Items" unique_id=1291500370 instance=ExtResource("8_rj586")]
+position = Vector2(1068, 722)
+
+[node name="Item38" parent="Things/PropsLevel1/Items" unique_id=338843265 instance=ExtResource("8_rj586")]
+position = Vector2(1068, 658)
+
+[node name="Item39" parent="Things/PropsLevel1/Items" unique_id=990356918 instance=ExtResource("8_rj586")]
+position = Vector2(1132, 658)
+
+[node name="Item40" parent="Things/PropsLevel1/Items" unique_id=1932312639 instance=ExtResource("8_rj586")]
+position = Vector2(1004, 722)
+
+[node name="Item41" parent="Things/PropsLevel1/Items" unique_id=1810224636 instance=ExtResource("8_rj586")]
+position = Vector2(1004, 658)
 
 [node name="Item7" parent="Things/PropsLevel1/Items" unique_id=1484205940 instance=ExtResource("8_rj586")]
-position = Vector2(1329, 165)
+position = Vector2(1324, 210)
 
 [node name="Item8" parent="Things/PropsLevel1/Items" unique_id=1077357106 instance=ExtResource("8_rj586")]
-position = Vector2(1312, 114)
+position = Vector2(1324, 146)
+
+[node name="Item42" parent="Things/PropsLevel1/Items" unique_id=467326758 instance=ExtResource("8_rj586")]
+position = Vector2(1324, 82)
+
+[node name="Item43" parent="Things/PropsLevel1/Items" unique_id=1840242840 instance=ExtResource("8_rj586")]
+position = Vector2(1324, 18)
+
+[node name="Item44" parent="Things/PropsLevel1/Items" unique_id=1094222215 instance=ExtResource("8_rj586")]
+position = Vector2(1324, -46)
+
+[node name="Item45" parent="Things/PropsLevel1/Items" unique_id=1930866189 instance=ExtResource("8_rj586")]
+position = Vector2(1324, -110)
 
 [node name="Item9" parent="Things/PropsLevel1/Items" unique_id=1874779685 instance=ExtResource("8_rj586")]
-position = Vector2(1041, -29)
+position = Vector2(1068, -46)
 
 [node name="Item10" parent="Things/PropsLevel1/Items" unique_id=591749679 instance=ExtResource("8_rj586")]
-position = Vector2(1160, -45)
+position = Vector2(1132, -46)
 
 [node name="Item11" parent="Things/PropsLevel1/Items" unique_id=1446428169 instance=ExtResource("8_rj586")]
-position = Vector2(831, -39)
+position = Vector2(812, -46)
+
+[node name="Item46" parent="Things/PropsLevel1/Items" unique_id=1889044143 instance=ExtResource("8_rj586")]
+position = Vector2(876, -46)
+
+[node name="Item47" parent="Things/PropsLevel1/Items" unique_id=1880891799 instance=ExtResource("8_rj586")]
+position = Vector2(940, -46)
+
+[node name="Item48" parent="Things/PropsLevel1/Items" unique_id=2095889139 instance=ExtResource("8_rj586")]
+position = Vector2(1004, -46)
 
 [node name="Decoration" type="Node2D" parent="Things/PropsLevel1" unique_id=872327643]
 y_sort_enabled = true
@@ -332,28 +532,64 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Item" parent="Things/PropsLevel2/Items" unique_id=1942592728 instance=ExtResource("8_rj586")]
-position = Vector2(902, 96)
+position = Vector2(928, 96)
 
 [node name="Item2" parent="Things/PropsLevel2/Items" unique_id=122003280 instance=ExtResource("8_rj586")]
-position = Vector2(798, 96)
+position = Vector2(864, 96)
 
 [node name="Item3" parent="Things/PropsLevel2/Items" unique_id=1599839557 instance=ExtResource("8_rj586")]
-position = Vector2(694, 96)
+position = Vector2(800, 96)
+
+[node name="Item9" parent="Things/PropsLevel2/Items" unique_id=930645188 instance=ExtResource("8_rj586")]
+position = Vector2(736, 96)
+
+[node name="Item10" parent="Things/PropsLevel2/Items" unique_id=367458673 instance=ExtResource("8_rj586")]
+position = Vector2(672, 96)
 
 [node name="Item4" parent="Things/PropsLevel2/Items" unique_id=347080746 instance=ExtResource("8_rj586")]
-position = Vector2(289, 302)
+position = Vector2(288, 288)
+
+[node name="Item11" parent="Things/PropsLevel2/Items" unique_id=1968263054 instance=ExtResource("8_rj586")]
+position = Vector2(352, 288)
+
+[node name="Item12" parent="Things/PropsLevel2/Items" unique_id=1733036069 instance=ExtResource("8_rj586")]
+position = Vector2(416, 288)
+
+[node name="Item13" parent="Things/PropsLevel2/Items" unique_id=2000734798 instance=ExtResource("8_rj586")]
+position = Vector2(416, 224)
+
+[node name="Item14" parent="Things/PropsLevel2/Items" unique_id=1040793863 instance=ExtResource("8_rj586")]
+position = Vector2(288, 224)
 
 [node name="Item5" parent="Things/PropsLevel2/Items" unique_id=2056980589 instance=ExtResource("8_rj586")]
-position = Vector2(1125, 557)
+position = Vector2(1120, 544)
+
+[node name="Item15" parent="Things/PropsLevel2/Items" unique_id=1448645809 instance=ExtResource("8_rj586")]
+position = Vector2(1184, 544)
+
+[node name="Item16" parent="Things/PropsLevel2/Items" unique_id=980060813 instance=ExtResource("8_rj586")]
+position = Vector2(1184, 480)
 
 [node name="Item6" parent="Things/PropsLevel2/Items" unique_id=993161967 instance=ExtResource("8_rj586")]
-position = Vector2(370, 61)
+position = Vector2(352, 32)
+
+[node name="Item17" parent="Things/PropsLevel2/Items" unique_id=2026245240 instance=ExtResource("8_rj586")]
+position = Vector2(416, 32)
 
 [node name="Item7" parent="Things/PropsLevel2/Items" unique_id=351732467 instance=ExtResource("8_rj586")]
-position = Vector2(440, -6)
+position = Vector2(416, -32)
 
 [node name="Item8" parent="Things/PropsLevel2/Items" unique_id=541978291 instance=ExtResource("8_rj586")]
-position = Vector2(495, 14)
+position = Vector2(480, -32)
+
+[node name="Item18" parent="Things/PropsLevel2/Items" unique_id=1826521848 instance=ExtResource("8_rj586")]
+position = Vector2(352, 96)
+
+[node name="Item19" parent="Things/PropsLevel2/Items" unique_id=942756817 instance=ExtResource("8_rj586")]
+position = Vector2(288, 96)
+
+[node name="Item20" parent="Things/PropsLevel2/Items" unique_id=1110970705 instance=ExtResource("8_rj586")]
+position = Vector2(288, 160)
 
 [node name="Decoration" type="Node2D" parent="Things/PropsLevel2" unique_id=194605157]
 y_sort_enabled = true

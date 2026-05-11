@@ -1,4 +1,5 @@
-extends Node
+@tool
+extends Node2D
 
 @export var character: PiquiCharacter
 
@@ -6,22 +7,26 @@ func _enter_tree() -> void:
 	if get_parent() is PiquiCharacter:
 		character = get_parent()
 
+func _ready() -> void:
+	if Engine.is_editor_hint():
+		set_physics_process(false)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if character.on_rails:
 		return
 	if event.is_action_released("jump"):
 		if character.above_ray.is_colliding():
-			jump(character.above_ray.global_position + character.above_ray.target_position, character.current_floor + 1)
+			jump(character.above_ray.global_position, character.current_floor + 1)
 		elif character.below_ray.is_colliding():
-			jump(character.below_ray.global_position + character.below_ray.target_position, character.current_floor - 1)
+			jump(character.below_ray.global_position, character.current_floor - 1)
 
 func _physics_process(_delta: float) -> void:
 	flip_above_below_rays()
 
 func flip_above_below_rays() -> void:
-	if not is_zero_approx(character.velocity.x):
-		character.above_ray.position.x = 64 * sign(character.velocity.x)
-		character.below_ray.position.x = 64 * sign(character.velocity.x)
+	if not is_zero_approx(character.facing_direction.x):
+		character.above_ray.position.x = 64 * sign(character.facing_direction.x)
+		character.below_ray.position.x = 64 * sign(character.facing_direction.x)
 
 func jump(end_pos: Vector2, new_floor: int) -> void:
 	character.on_rails = true
