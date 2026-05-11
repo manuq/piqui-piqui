@@ -136,20 +136,22 @@ animations = [{
 [node name="Node2D" type="Node2D" unique_id=1627724759]
 y_sort_enabled = true
 
-[node name="TilesLevel0" type="TileMapLayer" parent="." unique_id=305334697]
+[node name="Tiles" type="Node2D" parent="." unique_id=736836785]
+
+[node name="TilesLevel0" type="TileMapLayer" parent="Tiles" unique_id=305334697]
 light_mask = 32
 visibility_layer = 32
 tile_map_data = PackedByteArray("AAAIAAYAAQAAAAAAAAAJAAYAAQABAAAAAAAKAAYAAQABAAAAAAALAAYAAQABAAEAAAAMAAYAAQABAAEAAAAMAAcAAQABAAEAAAALAAcAAQABAAEAAAAKAAcAAQABAAEAAAAJAAcAAQABAAEAAAAIAAcAAQAAAAEAAAAIAAgAAQABAAEAAAAJAAgAAQABAAEAAAAKAAgAAQABAAEAAAALAAgAAQABAAEAAAAMAAgAAQABAAEAAAAIAAkAAQABAAEAAAAMAAkAAQABAAEAAAANAAYAAQACAAEAAAANAAcAAQACAAEAAAANAAgAAQACAAEAAAANAAkAAQACAAEAAAAIAAoAAQADAAEAAAAMAAoAAQAAAAEAAAANAAoAAQACAAEAAAALAAUAAQAAAAAAAAAMAAUAAQABAAAAAAANAAUAAQACAAAAAAAIAAsAAQADAAEAAAAIAAwAAQABAAEAAAAJAAwAAQABAAAAAAAKAAwAAQABAAAAAAAMAAsAAQAAAAEAAAANAAsAAQACAAEAAAAIAA0AAQAAAAEAAAAJAA0AAQABAAEAAAAKAA0AAQABAAEAAAALAAwAAQABAAAAAAAMAAwAAQABAAEAAAANAAwAAQACAAEAAAAIAA4AAQAAAAEAAAAJAA4AAQABAAEAAAAKAA4AAQABAAEAAAALAA0AAQABAAEAAAAMAA0AAQABAAEAAAANAA0AAQACAAEAAAADAAkAAQAAAAEAAAADAAgAAQAAAAAAAAADAAsAAQADAAEAAAADAAoAAQADAAEAAAAEAAgAAQABAAAAAAAFAAgAAQABAAAAAAAGAAgAAQABAAAAAAAHAAgAAQABAAAAAAAIAA8AAQAAAAIAAAAJAA8AAQABAAIAAAAKAA8AAQACAAIAAAALAA4AAQABAAIAAAAMAA4AAQABAAIAAAANAA4AAQACAAIAAAAHAAwAAQABAAMAAAAGAAwAAQABAAMAAAAFAAwAAQABAAMAAAAEAAwAAQABAAMAAAADAAwAAQAAAAIAAAAEAAkAAQABAAIAAAAFAAkAAQABAAIAAAAGAAkAAQABAAIAAAAHAAkAAQABAAIAAAAJAAkAAQABAAIAAAAKAAkAAQABAAIAAAALAAkAAQABAAIAAAA=")
 tile_set = ExtResource("1_epypp")
 
-[node name="TilesLevel1" type="TileMapLayer" parent="." unique_id=2053487249]
+[node name="TilesLevel1" type="TileMapLayer" parent="Tiles" unique_id=2053487249]
 light_mask = 64
 visibility_layer = 64
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAOAAgAAAAAAAEAAAAOAAcAAAAAAAEAAAAPAAcAAAACAAEAAAAPAAgAAAACAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAIAAAAQAAoAAAABAAEAAAARAAoAAAABAAAAAAASAAoAAAACAAAAAAASAAsAAAACAAIAAAARAAsAAAABAAIAAAAQAAsAAAAAAAIAAAAKAAQAAAACAAIAAAAJAAQAAAABAAQAAAAIAAQAAAABAAQAAAAKAAMAAAAAAAEAAAALAAMAAAABAAIAAAAMAAMAAAABAAIAAAANAAMAAAABAAIAAAAOAAMAAAACAAEAAAAOAAQAAAAAAAEAAAAOAAUAAAAAAAEAAAAOAAYAAAAAAAEAAAAPAAYAAAACAAEAAAAPAAUAAAACAAEAAAAPAAQAAAABAAAAAAAOAAIAAAACAAEAAAANAAIAAAABAAEAAAAMAAIAAAABAAEAAAALAAIAAAABAAEAAAAKAAIAAAAAAAEAAAAHAAQAAAAAAAAAAAAHAAUAAAADAAEAAAAHAAYAAAACAAIAAAAGAAYAAAABAAQAAAAFAAYAAAABAAQAAAAEAAYAAAABAAQAAAADAAYAAAABAAQAAAACAAYAAAAAAAAAAAACAAcAAAADAAEAAAACAAgAAAADAAEAAAACAAkAAAADAAIAAAALAAkAAAACAAAAAAAKAAkAAAABAAAAAAAOAAkAAAAAAAEAAAAKAAEAAAAAAAEAAAALAAEAAAABAAEAAAAMAAEAAAABAAEAAAANAAEAAAABAAEAAAAOAAEAAAACAAAAAAAKAAoAAAABAAIAAAALAAoAAAACAAIAAAAMAA4AAAADAAQAAAAOAAoAAAAAAAIAAAAQAAkAAAACAAAAAAAKAAAAAAAAAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAEAAAANAAAAAAACAAEAAAAQAAQAAAABAAQAAAARAAQAAAABAAQAAAASAAQAAAABAAQAAAATAAQAAAABAAQAAAAOAP//AAABAAIAAAAPAP//AAABAAIAAAAQAP//AAABAAIAAAARAP//AAABAAIAAAASAP//AAABAAIAAAATAP//AAABAAIAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP7/AAABAAAAAAARAP7/AAABAAAAAAASAP7/AAABAAAAAAATAP7/AAABAAAAAAAUAP//AAABAAIAAAAUAP7/AAACAAAAAAAVAP//AAACAAAAAAAVAAAAAAADAAEAAAAVAAEAAAADAAEAAAAVAAIAAAADAAEAAAAVAAMAAAADAAEAAAAUAAQAAAABAAQAAAAVAAQAAAACAAIAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAIAAAANAP//AAABAAEAAAANAP7/AAABAAAAAAAMAP//AAAAAAEAAAAMAP7/AAAAAAAAAAA=")
 tile_set = ExtResource("2_0hol4")
 
-[node name="TilesLevel1Bridges" type="TileMapLayer" parent="." unique_id=422364789]
+[node name="TilesLevel1Bridges" type="TileMapLayer" parent="Tiles" unique_id=422364789]
 light_mask = 64
 visibility_layer = 64
 z_index = 10
@@ -157,7 +159,7 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAALAAkAAQAAAAAAAAAMAAkAAQABAAAAAAANAAkAAQABAAAAAAAOAAkAAQACAAAAAAAMAAoAAQACAAMAAAANAAoAAQACAAMAAAA=")
 tile_set = ExtResource("2_0hol4")
 
-[node name="TilesLevel2" type="TileMapLayer" parent="." unique_id=651106990]
+[node name="TilesLevel2" type="TileMapLayer" parent="Tiles" unique_id=651106990]
 light_mask = 128
 visibility_layer = 128
 z_index = 10
@@ -165,7 +167,7 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAGAAQAAQACAAIAAAAFAAQAAQABAAIAAAAEAAQAAQAAAAIAAAAEAAMAAQAAAAEAAAAFAAMAAQABAAEAAAAGAAMAAQACAAEAAAAFAAIAAQABAAEAAAAEAAIAAQAAAAEAAAAGAAIAAQABAAEAAAAHAAIAAQABAAIAAAAIAAIAAQABAAIAAAAJAAIAAQACAAIAAAAJAAEAAQACAAEAAAAIAAEAAQABAAEAAAAHAAEAAQABAAEAAAAGAAEAAQABAAEAAAAFAAEAAQABAAEAAAAPAAIAAQAAAAIAAAAPAAEAAQAAAAEAAAAQAAEAAQABAAEAAAAQAAIAAQABAAIAAAAFAAAAAQAAAAAAAAAGAAAAAQABAAEAAAAHAAAAAQABAAEAAAAIAAAAAQABAAEAAAAJAAAAAQACAAEAAAAPAAAAAQAAAAEAAAAQAAAAAQABAAEAAAAEAAEAAQAAAAAAAAARAAgAAQAAAAIAAAASAAgAAQACAAIAAAASAAcAAQACAAAAAAARAAcAAQAAAAAAAAAGAP//AQAAAAAAAAAHAP//AQABAAAAAAAIAP//AQABAAAAAAAJAP//AQACAAAAAAAPAP//AQABAAAAAAAQAP//AQACAAAAAAARAAIAAQABAAIAAAASAAIAAQABAAIAAAASAAEAAQACAAAAAAARAAEAAQABAAEAAAARAAAAAQACAAAAAAATAAIAAQACAAQAAAAOAP//AQAAAAQAAAA=")
 tile_set = ExtResource("3_d21ai")
 
-[node name="TilesLevel2Bridges" type="TileMapLayer" parent="." unique_id=93665718]
+[node name="TilesLevel2Bridges" type="TileMapLayer" parent="Tiles" unique_id=93665718]
 light_mask = 128
 visibility_layer = 128
 z_index = 20
@@ -173,235 +175,238 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAJAAEAAAAAAAAAAAAKAAEAAAABAAAAAAALAAEAAAABAAAAAAAMAAEAAAABAAAAAAANAAEAAAABAAAAAAAOAAEAAAABAAAAAAAPAAEAAAACAAAAAAASAAIAAAAAAAEAAAASAAMAAAAAAAIAAAASAAQAAAAAAAIAAAASAAUAAAAAAAIAAAASAAYAAAAAAAIAAAASAAcAAAAAAAMAAAAKAAIAAAACAAMAAAALAAIAAAACAAMAAAAMAAIAAAACAAMAAAANAAIAAAACAAMAAAAOAAIAAAACAAMAAAA=")
 tile_set = ExtResource("3_d21ai")
 
-[node name="Player" parent="." unique_id=1106162901 instance=ExtResource("2_0e48y")]
+[node name="Things" type="Node2D" parent="." unique_id=1381767985]
+y_sort_enabled = true
+
+[node name="Player" parent="Things" unique_id=1106162901 instance=ExtResource("2_0e48y")]
 z_index = 10
 position = Vector2(800, 223)
 current_floor = 1
 
-[node name="Walk" type="Node" parent="Player" unique_id=1131318956]
+[node name="Walk" type="Node" parent="Things/Player" unique_id=1131318956]
 script = ExtResource("5_q6r6c")
 
-[node name="Jump" type="Node" parent="Player" unique_id=691507986]
+[node name="Jump" type="Node" parent="Things/Player" unique_id=691507986]
 script = ExtResource("6_ir8iy")
 
-[node name="PropsLevel0" type="Node2D" parent="." unique_id=1332390302]
+[node name="PropsLevel0" type="Node2D" parent="Things" unique_id=1332390302]
 y_sort_enabled = true
 
-[node name="Items" type="Node2D" parent="PropsLevel0" unique_id=1992515062]
+[node name="Items" type="Node2D" parent="Things/PropsLevel0" unique_id=1992515062]
 y_sort_enabled = true
 position = Vector2(-10, -47)
 
-[node name="Item" parent="PropsLevel0/Items" unique_id=669640821 instance=ExtResource("8_rj586")]
+[node name="Item" parent="Things/PropsLevel0/Items" unique_id=669640821 instance=ExtResource("8_rj586")]
 position = Vector2(541, 442)
 
-[node name="Item2" parent="PropsLevel0/Items" unique_id=1036986227 instance=ExtResource("8_rj586")]
+[node name="Item2" parent="Things/PropsLevel0/Items" unique_id=1036986227 instance=ExtResource("8_rj586")]
 position = Vector2(307, 842)
 
-[node name="Item3" parent="PropsLevel0/Items" unique_id=130160240 instance=ExtResource("8_rj586")]
+[node name="Item3" parent="Things/PropsLevel0/Items" unique_id=130160240 instance=ExtResource("8_rj586")]
 position = Vector2(452, 857)
 
-[node name="Item4" parent="PropsLevel0/Items" unique_id=1156953128 instance=ExtResource("8_rj586")]
+[node name="Item4" parent="Things/PropsLevel0/Items" unique_id=1156953128 instance=ExtResource("8_rj586")]
 position = Vector2(677, 1045)
 
-[node name="Item5" parent="PropsLevel0/Items" unique_id=1029049140 instance=ExtResource("8_rj586")]
+[node name="Item5" parent="Things/PropsLevel0/Items" unique_id=1029049140 instance=ExtResource("8_rj586")]
 position = Vector2(820, 478)
 
-[node name="Item6" parent="PropsLevel0/Items" unique_id=1910284958 instance=ExtResource("8_rj586")]
+[node name="Item6" parent="Things/PropsLevel0/Items" unique_id=1910284958 instance=ExtResource("8_rj586")]
 position = Vector2(388, 584)
 
-[node name="Item7" parent="PropsLevel0/Items" unique_id=52548370 instance=ExtResource("8_rj586")]
+[node name="Item7" parent="Things/PropsLevel0/Items" unique_id=52548370 instance=ExtResource("8_rj586")]
 position = Vector2(558, 746)
 
-[node name="Item8" parent="PropsLevel0/Items" unique_id=1689208121 instance=ExtResource("8_rj586")]
+[node name="Item8" parent="Things/PropsLevel0/Items" unique_id=1689208121 instance=ExtResource("8_rj586")]
 position = Vector2(868, 699)
 
-[node name="Item9" parent="PropsLevel0/Items" unique_id=1583464093 instance=ExtResource("8_rj586")]
+[node name="Item9" parent="Things/PropsLevel0/Items" unique_id=1583464093 instance=ExtResource("8_rj586")]
 position = Vector2(861, 568)
 
-[node name="Item10" parent="PropsLevel0/Items" unique_id=1811408063 instance=ExtResource("8_rj586")]
+[node name="Item10" parent="Things/PropsLevel0/Items" unique_id=1811408063 instance=ExtResource("8_rj586")]
 position = Vector2(772, 997)
 
-[node name="Item11" parent="PropsLevel0/Items" unique_id=1256650151 instance=ExtResource("8_rj586")]
+[node name="Item11" parent="Things/PropsLevel0/Items" unique_id=1256650151 instance=ExtResource("8_rj586")]
 position = Vector2(878, 938)
 
-[node name="Decoration" type="Node2D" parent="PropsLevel0" unique_id=294053800]
+[node name="Decoration" type="Node2D" parent="Things/PropsLevel0" unique_id=294053800]
 y_sort_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PropsLevel0/Decoration" unique_id=1264162085]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Things/PropsLevel0/Decoration" unique_id=1264162085]
 position = Vector2(764, 927)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PropsLevel0/Decoration" unique_id=1759065880]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Things/PropsLevel0/Decoration" unique_id=1759065880]
 position = Vector2(839, 944)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="PropsLevel1" type="Node2D" parent="." unique_id=863791612]
+[node name="PropsLevel1" type="Node2D" parent="Things" unique_id=863791612]
 z_index = 10
 y_sort_enabled = true
 
-[node name="Items" type="Node2D" parent="PropsLevel1" unique_id=1415639678]
+[node name="Items" type="Node2D" parent="Things/PropsLevel1" unique_id=1415639678]
 y_sort_enabled = true
 position = Vector2(52, 14)
 
-[node name="Item" parent="PropsLevel1/Items" unique_id=1624289820 instance=ExtResource("8_rj586")]
+[node name="Item" parent="Things/PropsLevel1/Items" unique_id=1624289820 instance=ExtResource("8_rj586")]
 position = Vector2(1085, 275)
 
-[node name="Item2" parent="PropsLevel1/Items" unique_id=728981659 instance=ExtResource("8_rj586")]
+[node name="Item2" parent="Things/PropsLevel1/Items" unique_id=728981659 instance=ExtResource("8_rj586")]
 position = Vector2(874, 186)
 
-[node name="Item3" parent="PropsLevel1/Items" unique_id=8555402 instance=ExtResource("8_rj586")]
+[node name="Item3" parent="Things/PropsLevel1/Items" unique_id=8555402 instance=ExtResource("8_rj586")]
 position = Vector2(423, 404)
 
-[node name="Item4" parent="PropsLevel1/Items" unique_id=696225929 instance=ExtResource("8_rj586")]
+[node name="Item4" parent="Things/PropsLevel1/Items" unique_id=696225929 instance=ExtResource("8_rj586")]
 position = Vector2(108, 603)
 
-[node name="Item5" parent="PropsLevel1/Items" unique_id=826325026 instance=ExtResource("8_rj586")]
+[node name="Item5" parent="Things/PropsLevel1/Items" unique_id=826325026 instance=ExtResource("8_rj586")]
 position = Vector2(588, 599)
 
-[node name="Item6" parent="PropsLevel1/Items" unique_id=1153426438 instance=ExtResource("8_rj586")]
+[node name="Item6" parent="Things/PropsLevel1/Items" unique_id=1153426438 instance=ExtResource("8_rj586")]
 position = Vector2(1134, 731)
 
-[node name="Item7" parent="PropsLevel1/Items" unique_id=1484205940 instance=ExtResource("8_rj586")]
+[node name="Item7" parent="Things/PropsLevel1/Items" unique_id=1484205940 instance=ExtResource("8_rj586")]
 position = Vector2(1329, 165)
 
-[node name="Item8" parent="PropsLevel1/Items" unique_id=1077357106 instance=ExtResource("8_rj586")]
+[node name="Item8" parent="Things/PropsLevel1/Items" unique_id=1077357106 instance=ExtResource("8_rj586")]
 position = Vector2(1312, 114)
 
-[node name="Item9" parent="PropsLevel1/Items" unique_id=1874779685 instance=ExtResource("8_rj586")]
+[node name="Item9" parent="Things/PropsLevel1/Items" unique_id=1874779685 instance=ExtResource("8_rj586")]
 position = Vector2(1041, -29)
 
-[node name="Item10" parent="PropsLevel1/Items" unique_id=591749679 instance=ExtResource("8_rj586")]
+[node name="Item10" parent="Things/PropsLevel1/Items" unique_id=591749679 instance=ExtResource("8_rj586")]
 position = Vector2(1160, -45)
 
-[node name="Item11" parent="PropsLevel1/Items" unique_id=1446428169 instance=ExtResource("8_rj586")]
+[node name="Item11" parent="Things/PropsLevel1/Items" unique_id=1446428169 instance=ExtResource("8_rj586")]
 position = Vector2(831, -39)
 
-[node name="Decoration" type="Node2D" parent="PropsLevel1" unique_id=872327643]
+[node name="Decoration" type="Node2D" parent="Things/PropsLevel1" unique_id=872327643]
 y_sort_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=278567154]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=278567154]
 position = Vector2(623, 584)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=277157760]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=277157760]
 position = Vector2(743, 582)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=64749285]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=64749285]
 position = Vector2(608, 600)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=1883346533]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=1883346533]
 position = Vector2(1221, 264)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=22208118]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=22208118]
 position = Vector2(997, 263)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="PropsLevel1/Decoration" unique_id=1537150260]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Things/PropsLevel1/Decoration" unique_id=1537150260]
 position = Vector2(189, 394)
 sprite_frames = SubResource("SpriteFrames_7vxoj")
 autoplay = "default"
 offset = Vector2(0, -77.3)
 
-[node name="PropsLevel2" type="Node2D" parent="." unique_id=2007040048]
+[node name="PropsLevel2" type="Node2D" parent="Things" unique_id=2007040048]
 z_index = 20
 y_sort_enabled = true
 
-[node name="Items" type="Node2D" parent="PropsLevel2" unique_id=246301827]
+[node name="Items" type="Node2D" parent="Things/PropsLevel2" unique_id=246301827]
 y_sort_enabled = true
 
-[node name="Item" parent="PropsLevel2/Items" unique_id=1942592728 instance=ExtResource("8_rj586")]
+[node name="Item" parent="Things/PropsLevel2/Items" unique_id=1942592728 instance=ExtResource("8_rj586")]
 position = Vector2(902, 96)
 
-[node name="Item2" parent="PropsLevel2/Items" unique_id=122003280 instance=ExtResource("8_rj586")]
+[node name="Item2" parent="Things/PropsLevel2/Items" unique_id=122003280 instance=ExtResource("8_rj586")]
 position = Vector2(798, 96)
 
-[node name="Item3" parent="PropsLevel2/Items" unique_id=1599839557 instance=ExtResource("8_rj586")]
+[node name="Item3" parent="Things/PropsLevel2/Items" unique_id=1599839557 instance=ExtResource("8_rj586")]
 position = Vector2(694, 96)
 
-[node name="Item4" parent="PropsLevel2/Items" unique_id=347080746 instance=ExtResource("8_rj586")]
+[node name="Item4" parent="Things/PropsLevel2/Items" unique_id=347080746 instance=ExtResource("8_rj586")]
 position = Vector2(289, 302)
 
-[node name="Item5" parent="PropsLevel2/Items" unique_id=2056980589 instance=ExtResource("8_rj586")]
+[node name="Item5" parent="Things/PropsLevel2/Items" unique_id=2056980589 instance=ExtResource("8_rj586")]
 position = Vector2(1125, 557)
 
-[node name="Item6" parent="PropsLevel2/Items" unique_id=993161967 instance=ExtResource("8_rj586")]
+[node name="Item6" parent="Things/PropsLevel2/Items" unique_id=993161967 instance=ExtResource("8_rj586")]
 position = Vector2(370, 61)
 
-[node name="Item7" parent="PropsLevel2/Items" unique_id=351732467 instance=ExtResource("8_rj586")]
+[node name="Item7" parent="Things/PropsLevel2/Items" unique_id=351732467 instance=ExtResource("8_rj586")]
 position = Vector2(440, -6)
 
-[node name="Item8" parent="PropsLevel2/Items" unique_id=541978291 instance=ExtResource("8_rj586")]
+[node name="Item8" parent="Things/PropsLevel2/Items" unique_id=541978291 instance=ExtResource("8_rj586")]
 position = Vector2(495, 14)
 
-[node name="Decoration" type="Node2D" parent="PropsLevel2" unique_id=194605157]
+[node name="Decoration" type="Node2D" parent="Things/PropsLevel2" unique_id=194605157]
 y_sort_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1368644761]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1368644761]
 position = Vector2(431, 222)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1132621847]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1132621847]
 position = Vector2(328, 73)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1187412377]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1187412377]
 position = Vector2(1074, 177)
 sprite_frames = SubResource("SpriteFrames_d2bti")
 autoplay = "default"
 offset = Vector2(0, -8)
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1604377757]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1604377757]
 position = Vector2(1045, 158)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=47423445]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=47423445]
 position = Vector2(605, 139)
 sprite_frames = SubResource("SpriteFrames_hqns4")
 autoplay = "default"
 offset = Vector2(0, -11)
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=485621414]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=485621414]
 position = Vector2(609, 11)
 sprite_frames = SubResource("SpriteFrames_7vxoj")
 autoplay = "default"
 offset = Vector2(0, -77.3)
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1413666516]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1413666516]
 position = Vector2(1254, 140)
 sprite_frames = SubResource("SpriteFrames_7vxoj")
 autoplay = "default"
 offset = Vector2(0, -77.3)
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=1917389425]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=1917389425]
 position = Vector2(959, -49)
 sprite_frames = SubResource("SpriteFrames_7vxoj")
 autoplay = "default"
 offset = Vector2(0, -77.3)
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="PropsLevel2/Decoration" unique_id=848075646]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Things/PropsLevel2/Decoration" unique_id=848075646]
 position = Vector2(1119, 465)
 sprite_frames = SubResource("SpriteFrames_7vxoj")
 autoplay = "default"
